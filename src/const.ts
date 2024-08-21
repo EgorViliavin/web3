@@ -16,3 +16,10 @@ export const SORT_TYPES = [
     title: " Сортировка по дате",
   },
 ];
+
+export const messages = {
+  default: "Загрузка...",
+  pending: "Ожидание...",
+  rejected: "Ошибка загрузки на сервере...",
+  fulfilled: "",
+};

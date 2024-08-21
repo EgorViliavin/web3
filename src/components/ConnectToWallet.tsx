@@ -38,10 +38,10 @@ createWeb3Modal({
 });
 
 const ConnectToWallet = () => {
-  const { address, chainId } = useWeb3ModalAccount();
+  const { address } = useWeb3ModalAccount();
   return (
     <div>
-      <p>{address} </p>
+      <p>{address}</p>
       <w3m-button />
     </div>
   );
