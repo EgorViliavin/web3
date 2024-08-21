@@ -1,4 +1,8 @@
-import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
+import {
+  createWeb3Modal,
+  defaultConfig,
+  useWeb3ModalAccount,
+} from "@web3modal/ethers/react";
 
 const projectId = "d74ce746c49d6b94ab8933dd3d4bd612";
 
@@ -34,8 +38,10 @@ createWeb3Modal({
 });
 
 const ConnectToWallet = () => {
+  const { address, chainId } = useWeb3ModalAccount();
   return (
     <div>
+      <p>{address} </p>
       <w3m-button />
     </div>
   );
