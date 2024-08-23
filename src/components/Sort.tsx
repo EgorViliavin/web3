@@ -1,22 +1,19 @@
 import { SORT_TYPES } from "../const";
+import { TSortProps } from "../types";
 
-type SortProps = {
-  store: (sortType: string) => void;
-};
-
-const Sort = (props: SortProps): JSX.Element => {
+const Sort = ({ store }: TSortProps): JSX.Element => {
   const handleSortChange = (sortType: string) => {
-    props.store(sortType);
+    store(sortType);
   };
   return (
-    <div className="w-full mx-auto flex  gap-5 mb-5">
+    <div className="w-full mx-auto flex gap-5 mb-5">
       {SORT_TYPES.map((item, index) => {
         return (
           <button
             /** Знаю что index нельзя прокидывать))) */
             key={index}
             onClick={() => handleSortChange(item.type)}
-            className=" text-xs md:text-lg  border px-2 rounded-2xl"
+            className="text-xs md:text-lg border px-2 rounded-2xl"
           >
             {item.title}
           </button>

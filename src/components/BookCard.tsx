@@ -1,15 +1,15 @@
-import { IRenameKeyBooks } from "../types";
-
-type BookCardProps = IRenameKeyBooks;
+import { Link } from "react-router-dom";
+import { TBookCardProps } from "../types";
 
 const BookCard = ({
   title,
   price,
   date,
   rating,
-}: BookCardProps): JSX.Element => {
+  id,
+}: TBookCardProps): JSX.Element => {
   return (
-    <div className="block rounded-lg w-60  md:w-72  shadow-2xl">
+    <div className="block rounded-lg w-60 md:w-72 shadow-2xl">
       <div
         className="relative overflow-hidden bg-cover bg-no-repeat"
         data-te-ripple-init
@@ -41,10 +41,13 @@ const BookCard = ({
             </svg>
           </h5>
         </div>
-        <p className="mb-1 text-sm  font-bold ">{title}</p>
+        <p className="mb-1 text-sm font-bold">{title}</p>
 
-        <p className="mb-4 text-base ">Дата добавления:{date}</p>
-        <h5 className="mb-2 text-sm font-bold leading-tight">{price} РУБ</h5>
+        <p className="mb-4 text-base ">Дата добавления: {date}</p>
+        <h5 className="mb-2 text-sm font-bold leading-tight">
+          {price} &#8381;
+        </h5>
+        <Link to={`book/${id}`}>Подробнее</Link>
       </div>
     </div>
   );

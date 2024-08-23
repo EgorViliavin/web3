@@ -26,7 +26,6 @@ const ethersConfig = defaultConfig({
   enableEIP6963: true,
   enableInjected: true,
   enableCoinbase: true,
-  rpcUrl: "...",
   defaultChainId: 1,
 });
 
@@ -37,12 +36,12 @@ createWeb3Modal({
   enableAnalytics: true,
 });
 
-const ConnectToWallet = () => {
+const ConnectToWallet = (): JSX.Element => {
   const { address } = useWeb3ModalAccount();
   return (
     <div>
-      <p>{address}</p>
-      <w3m-button />
+      <p className="text-xs">{address}</p>
+      <w3m-button label="Подключить кошелек" />
     </div>
   );
 };

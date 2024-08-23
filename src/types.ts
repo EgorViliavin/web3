@@ -10,7 +10,6 @@ export interface IBooks {
     rated_avg: number;
   };
 }
-
 export interface IRenameKeyBooks {
   id?: string;
   title: string;
@@ -18,3 +17,22 @@ export interface IRenameKeyBooks {
   date: string;
   rating: number;
 }
+
+export type TBookWrapperProps = {
+  books: IRenameKeyBooks[];
+};
+
+export type TBookCardProps = IRenameKeyBooks;
+
+export type TSearchProps = {
+  store: (val: string) => void;
+};
+
+export type TSortProps = {
+  store: (sortType: string) => void;
+};
+
+export type TWrapperProps = {
+  status: "rejected" | "pending" | "fulfilled" | "default";
+  children: React.ReactNode;
+};
